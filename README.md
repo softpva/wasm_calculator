@@ -26,11 +26,11 @@
 > ![an example](/readmeImages/pict_1.gif)  
 
 > ## After placing the result in memory with the MS button  
-> Note that the value is shown below the MR text.
+> Note that the value is shown below the MR text.  
 > ![sore in memory](/readmeImages/pict_2.gif)  
 
 > ## Using the memory value    
-> And, obviously, you can capture the MR value at any time.
+> And, obviously, you can capture the MR value at any time.   
 > ![restore from memory](/readmeImages/pict_3.gif)
 
 # Models

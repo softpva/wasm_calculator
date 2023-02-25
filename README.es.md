@@ -26,11 +26,11 @@
 > ![un ejemplo](/readmeImages/pict_1.gif)
 
 > ## Después de colocar el resultado en la memoria presionando el botón MS  
-> Tenga en cuenta que el valor se muestra debajo del texto MR;
+> Tenga en cuenta que el valor se muestra debajo del texto MR.  
 > ![me duele la memoria](/readmeImages/pict_2.gif)
 
 > ## Usando el valor en memoria  
-> Y por supuesto, puedes canjear el valor de MR en cualquier momento.
+> Y por supuesto, puedes canjear el valor de MR en cualquier  momento.
 > ![restaurar desde memoria](/readmeImages/pict_3.gif)
 
 # Modelos
