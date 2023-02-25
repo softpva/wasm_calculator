@@ -19,17 +19,17 @@
 > - La respectiva expresión infix también puede ser resuelta por la función javascript eval(), para eso basta con descomentar el respectivo código y comentar la línea que contiene la función solve_infix(). (La función eval() no puede resolver correctamente números negativos precedidos por operadores, la función solve_infix(), una función en rust, puede hacerlo perfectamente.  
 
 # Diseños
-> ## Estado inicial
+> ## Estado inicial  
 > ![estado inicial](/readmeImages/init.gif)
 
-> ## Un ejemplo
+> ## Un ejemplo  
 > ![un ejemplo](/readmeImages/pict_1.gif)
 
-> ## Después de colocar el resultado en la memoria presionando el botón MS
+> ## Después de colocar el resultado en la memoria presionando el botón MS  
 > Tenga en cuenta que el valor se muestra debajo del texto MR;
 > ![me duele la memoria](/readmeImages/pict_2.gif)
 
-> ## Usando el valor en memoria.
+> ## Usando el valor en memoria  
 > Y por supuesto, puedes canjear el valor de MR en cualquier momento.
 > ![restaurar desde memoria](/readmeImages/pict_3.gif)
 

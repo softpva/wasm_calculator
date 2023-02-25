@@ -2,8 +2,6 @@ use std::{collections::VecDeque, io::{self, Write}};
 use wasm_bindgen::prelude::*;
 mod utils;
 
-use wasm_bindgen::prelude::*;
-
 fn eval_rpn(rpn: &str) -> f64 {
     let mut stack = VecDeque::new();
 
@@ -110,8 +108,9 @@ pub fn solve_infix(infix: &str) -> f64 {
     eval_rpn(&infix_to_rpn(infix))
 }
 
+
+// FOR TESTING:
 // fn main() {
-//     // for test
 //     let mut txt = String::new();
 //     println!("Write an infix expression separated by spaces
 //     Example: \"( 1 + 1 ) ** ( 2 + 1 ) + 10 / 5\" \n"

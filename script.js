@@ -1,4 +1,3 @@
-// import "lib";
 import init, {solve_infix} from './pkg/wasm_calculator.js';
 
 async function run_wasm(str){
@@ -19,27 +18,28 @@ class Calculator {
         this.buttonEventListener();
     }
 
-    buildNumber(num) {
-        if (this.s_expression.includes('=') && this.s_number[0] !== '0') this.s_number = '0';
+    buildANumber(num) {
+        if (this.s_expression.includes('=') && this.s_number[0] !== '0'){
+			this.s_number = '0';
+			this.s_expression = ''
+		}
         if (this.s_number.includes('.') && num === '.') return;
         if (this.s_number[0] == '0') this.s_number = '';
         this.s_number += num;
         this.show();
     }
 
-    buildExpression(op) {
+    buildAnExpression(op) {
         if (this.s_expression.includes('=')) this.s_expression = '';
         let c_penult = this.s_expression.at(-2) || '';
-        // console.log("Expr: " + this.s_expression);
-        // console.log(c_penult + ' ' + this.s_number[0] + ' ' + op);
         if (c_penult === ')' && this.s_number[0] !== '0') this.s_expression += '* ';
-        if (this.s_number[0] !== '0') this.s_expression += (this.s_number + ' ');
+        if (this.s_number[0] !== '0' || this.s_number[1] === '.') this.s_expression += (this.s_number + ' ');
         c_penult = this.s_expression.at(-2) || '';
         if (!isNaN(c_penult) && this.s_expression !== '' && op == '(') op = '* (';
         if (op == ')' && this.n_parenthesis() === 0) return;
         this.s_expression += (op + ' ');
         this.s_number = '0';
-        this.show();
+        this.show();		
     }
 
     async run_wasm(str){
@@ -48,7 +48,8 @@ class Calculator {
     }
 
 
-    async equalPressed() {
+    async equalIsPressed() {
+        if (this.s_expression.includes('=')) return;
         if (this.s_expression.at(-2) === ')' && this.s_number[0] !== '0') this.s_expression += '* ';
         if (this.s_number[0] !== '0') this.s_expression += (this.s_number + ' ');
         const n_parenthesis = this.n_parenthesis();
@@ -63,7 +64,7 @@ class Calculator {
     }
 
     async doCommand(com) {
-        if (com === '=') await this.equalPressed();
+        if (com === '=') await this.equalIsPressed();
         if (com === 'AC') this.clearAll();
         if (com === 'DEL') this.delete();
         if (com === 'MS') this.setMemory();
@@ -117,12 +118,12 @@ class Calculator {
     buttonEventListener() {
         document.querySelectorAll("[data-num]").forEach(button => {
             button.addEventListener('click', () => {
-                this.buildNumber(button.textContent);
+                this.buildANumber(button.textContent);
             })
         })
         document.querySelectorAll("[data-op]").forEach(button => {
             button.addEventListener('click', () => {
-                this.buildExpression(button.textContent);
+                this.buildAnExpression(button.textContent);
             })
         })
         document.querySelectorAll("[data-com]").forEach(button => {
